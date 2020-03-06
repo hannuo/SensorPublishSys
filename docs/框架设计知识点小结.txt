@@ -1,0 +1,147 @@
+1.hpp的使用
+
+2.subcriber.hpp
+	
+	2.0 hpp		
+		将.cpp的实现代码混入.h头文件当中，定义与实现都包含在同一文件，则该类的调用者只需要include该hpp文件即可，无需再 将cpp加入到project中进行编译。而实现代码将直接编译到调用者的obj文件中.
+		
+		编写中有以下几点要注意:
+		不可包含全局对象和全局函数。
+		类之间不可循环调用。
+		不可使用静态成员。如果类含有静态成员，则在hpp中必需加入静态成员初始化代码，当该hpp被多个文档include时，将产生符号重定义错误。
+	
+	2.1 std::mutex的使用
+	
+		std::unique_lock为锁管理模板类，是对通用mutex的封装。
+		C++11中引入了std::unique_lock与std::lock_guard两种数据结构。通过对lock和unlock进行一次薄的封装，实现自动unlock的功能。
+		
+		std::mutex mut_;
+		std::unique_lock<std::mutex> lk(mut_);
+		等待中的线程如果在等待期间需要解锁mutex，并在之后重新将其锁定
+		
+	2.2 std::queue的使用	
+	
+		stl 里面的容器适配器, 用来适配FIFO的数据结构。
+		
+		std::queue<std::shared_ptr<T>> m_queue;
+		
+		std::queue::push(type t)
+		
+		std::queue::pop() 为了异常安全, 这个方法返回void, 所以通常调用t = std::queue::front(), 查看队列头部的元素, 然后调用std::queue::pop(), 让元素出队列.
+		
+	2.2 std::thread的使用
+
+	2.3 template<typename T>class subcirber { }  模版声明类的写法于类的使用
+	
+		1.在模板引入c++后，最初定义模板的方法为:template<class T>
+		这里class关键字表明T是一个类型，后来为了避免class在这两个地方的使用可能给人带来混淆，所以引入了typename这个关键字，它的作用同class一样表明后面的符号为一个类型，这样在定义模板的时候可以使用下面的方式了:
+		template<typename T>.在模板定义语法中关键字class与typename的作用完全一样
+		
+		2.
+		一个类模板(类生成类)允许用户为类定义个一种模式，使得类中的某些数据成员、默认成员函数的参数，某些成员函数的返回值，能够取任意类型(包括系统预定义的和用户自定义的)。
+		
+		如果一个类中的数据成员的数据类型不能确定，或者是某个成员函数的参数或返回值的类型不能确定，就必须将此类声明为模板，它的存在不是代表一个具体的、实际的类，而是代表一类类。
+		
+		定义一个类模板：
+		1.要定义一个类，其格式为：
+		template<typename T>
+		class test
+		{
+			....
+		}
+		2.在类定义体中，如果采用通用数据类型的成员，函数参数的前面需加上T，其中通用类型T可以作为普通成员变量的类型。还可以作为成员函数的参数和返回类型
+		
+		如果在类外定义成员函数，若此成员函数中有模板参数存在，则除了需要和一般类的类外定义成员函数一样的定义外，还需要在函数外进行模板声明
+		template<class T>
+2 		void Test<T>::print()
+3 		{
+4     		std::cout<<"n="<<n<<std::endl;
+5     		std::cout<<"i="<<i<<std::endl;
+6 		}
+
+		3.类模板的使用实际上是将类模板实例化成一个具体的类，它的格式为：类名<实际的类型>
+		
+		4.模板类是类模板实例化后的一个产物
+		
+	2.3 std::shared_ptr 的使用
+  
+	2.4 订阅者申请my_queue空间，如何通过publiser写入数据进my_queue
+	for(auto it : subs) { it->write(pl); }
+
+	2.5 提供的功能函数，类成员：
+	bool read(T& t)  
+	void write(std::shared_ptr<T>& t)
+
+	std::queue<std::shared_ptr<T>> m_queue;
+	一个发布者实例类，和多个订阅者类共享数据
+	
+
+3.publisher.hpp
+
+	3.1 std::set的使用
+
+	3.2 std::memory的使用
+
+	3.3 pbulisher_base 父基类 虚析构函数的作用
+
+	3.4 提供的类成员，功能函数
+	std::set<subcriber<T>*> subs;
+
+	void insert_subcriber(subcriber<T>* pSub)
+	void write(T& t)
+	
+	
+	3.5
+	std::set<subcriber<T>*> sub;
+	
+	(T &t)
+	std::shared_ptr<T> p1 = std::make_shared<T>(t);
+	for(auto it : subs) { it->write(pl);} //直接发布到订阅者维护的数据队列中
+	
+4.CQueueFactory.h CQueueFactory.cpp
+
+	4.1 构造函数私有
+	
+	4.2 四个静态函数，两个public 于*.h中定义，两个private 于*.cpp中定义
+	
+	4.3 两个全局变量于*.cpp中定义
+	static std::mutex g_mutex_queue;
+	static std::map<std::string, publisher_base*> g_map_base;
+	
+	4.3 提供的功能函数，类成员：
+	template<typename T>
+	static publisher<T>* create_publiser(std::string type)
+	
+	template<typename T>
+	static subscriber<T>* create_subscriber(std::string type, std::string name, uint32_t size)
+	
+	static void add(publisher_base* obj);
+	static publisher_base* get(std::string type);
+	
+5.总体的理解
+
+	一个map<std::string, publisher_base*>   维护多个命名的的publisher
+	
+	每个有名字标志的publisher，维护着与它相关的有自己名字的订阅者，并管理一份数据队列（共享指针）
+	通过publiser写入，每个订阅者读出（何时读出，一个小疑惑，于实际的场景中，发布写于订阅度如何绑定通知的，直接遍历订阅者成员读吗）
+	
+	
+6.其他一些新知识点
+
+	拷贝构造，移动构造
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,3 @@
+myimu: ../config/myimu.yaml
+mycamera: ../config/mycamera.yaml
+mypolcamera: ../config/mypolcamera.yaml

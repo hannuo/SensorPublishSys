@@ -1,0 +1,225 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "comm",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "comm",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "buffer",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "buffer",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "sensor",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "sensor",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "alg",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "alg",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "main",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "main",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "_comm",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "_buffer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "_sensor",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "_alg",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "robooster_framework",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "_alg::@66ed0869c52c1b6b841b",
+					"jsonFile" : "target-_alg-Debug-d31561aab6c8611fb42b.json",
+					"name" : "_alg",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "_buffer::@850c0962cff040fb352c",
+					"jsonFile" : "target-_buffer-Debug-a230aa074b03dff69469.json",
+					"name" : "_buffer",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "_comm::@5d0950cb918126deea0d",
+					"jsonFile" : "target-_comm-Debug-97bde0eaeaf4fb645abf.json",
+					"name" : "_comm",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "_sensor::@2278a11be90d082dfe8b",
+					"jsonFile" : "target-_sensor-Debug-cba5643826c33c266379.json",
+					"name" : "_sensor",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "robooster_framework::@15c4a824ab2728a3f5e7",
+					"jsonFile" : "target-robooster_framework-Debug-30eb11fbdea4e670f9c7.json",
+					"name" : "robooster_framework",
+					"projectIndex" : 5
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src/out/build/x64-Debug",
+		"source" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

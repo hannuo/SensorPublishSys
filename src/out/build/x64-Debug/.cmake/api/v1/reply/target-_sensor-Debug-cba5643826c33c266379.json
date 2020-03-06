@@ -1,0 +1,207 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "sensor/_sensor.dll"
+		},
+		{
+			"path" : "sensor/_sensor.lib"
+		},
+		{
+			"path" : "sensor/_sensor.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"sensor/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -std=c++11 -fPIC -Wall -lpthread"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "_sensor_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src/sensor/."
+				},
+				{
+					"backtrace" : 3,
+					"path" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src/sensor/../comm"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src/sensor/../buffer"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "Z:/项目/001_仿ros架构_ubuntu/VsGRobooster/src/sensor/../../yaml-cpp/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "_comm::@5d0950cb918126deea0d"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "_buffer::@850c0962cff040fb352c"
+		}
+	],
+	"id" : "_sensor::@2278a11be90d082dfe8b",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-LIBPATH:Z:\\项目\\001_仿ros架构_ubuntu\\VsGRobooster\\src\\sensor\\..\\build\\comm  -LIBPATH:Z:\\项目\\001_仿ros架构_ubuntu\\VsGRobooster\\src\\sensor\\..\\build\\buffer  -LIBPATH:Z:\\项目\\001_仿ros架构_ubuntu\\VsGRobooster\\src\\sensor\\..\\..\\yaml-cpp\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "..\\comm\\_comm.lib ..\\buffer\\_buffer.lib yaml-cpp.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "_sensor",
+	"nameOnDisk" : "_sensor.dll",
+	"paths" : 
+	{
+		"build" : "sensor",
+		"source" : "sensor"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CBarometricDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CCameraDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CCompassDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CGnssDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CImuDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CPolCameraDemo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CSensorFactory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sensor/CSensorGrp.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

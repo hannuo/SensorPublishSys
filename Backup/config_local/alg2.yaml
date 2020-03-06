@@ -1,0 +1,4 @@
+name: alg2
+data: imu
+que_size: 1000
+inteval: 1000

@@ -1,0 +1,105 @@
+GlobalParam.HaveGNSS:1
+GlobalParam.HaveMIMU:1
+GlobalParam.Havecompass:1
+GlobalParam.HavePolCamera:1
+GlobalParam.HaveCamera:1
+GlobalParam.HaveBarometric:1
+
+##Global parameters. Must be calibrated and set before using.
+GlobalParam.R2D:57.29578
+GlobalParam.D2R:1.7453e-2
+GlobalParam.F:3.3528e-3
+GlobalParam.Re:6378140
+GlobalParam.R:6378137
+GlobalParam.Wie:7.2921e-5
+GlobalParam.Ge:9.7825
+GlobalParam.Eeee:6.69438e-3
+GlobalParam.Eee:0.08182
+
+
+##Initial time and position parameter. If GlobalParam.HaveGNSS==1, then these parameters can be obtained from GNSS data.
+##Otherwise, they should be set before using. 
+##Initparam.GNSSFlag:1 #true
+Initparam.time:10   #manual setting
+Initparam.lat:28.2563
+Initparam.lon:113.1731
+Initparam.alt:68.6
+
+
+##paramters of INS. Must be calibrated and set before using.
+INSParam.Samptime:0.005
+INSParam.mdAccelNoiseSigma:0.00186
+INSParam.mdGyroNoiseSigma:0.000187
+INSParam.mdAccelBiasRWSigma:0.000433
+INSParam.mvInitAccBiasx:0.0
+INSParam.mvInitAccBiasy:0.0
+INSParam.mvInitAccBiasz:0.0
+INSParam.mvInitGyroBiasx:0.0
+INSParam.mvInitGyroBiasy:0.0
+INSParam.mvInitGyroBiasz:0.0
+
+
+##paramters of compass magdeclination. Must be calibrated and set before using.
+CompassParam.magdecl:2.23
+CompassParam.H:!!opencv-matrix
+        rows:1
+        cols:3
+        dt:d
+        data:[0,0,0]
+CompassParam.B:!!opencv-matrix
+        rows:3
+        cols:3
+        dt:d
+        data:[0,0,0,0,0,0,0,0,0]
+
+#GNSSParam.
+
+#Paramters of Barometric altimeters. Must be calibrated and set before using. 
+# height=(-exp((log(bmp280_compensate_pressure_double(adc_p))+k1)/k2)+k3)/k4;
+
+BarometricParam.K1:0.2
+BarometricParam.K2:0.3
+BarometricParam.K3:0.4
+BarometricParam.K4:0.5
+
+#Paramters of Camera. Must be calibrated and set before using.
+CameraParam.cx:620.5
+CameraParam.cy:480.5
+CameraParam.f:1200.0
+CameraParam.distortion:!!opencv-matrix
+        rows:1
+        cols:5
+        dt:d
+        data:[-0.352473,0.143400,0.00405,-0.0036,0.000]
+
+#Paramters of polarization camera. Must be calibrated and set before using. 
+PolCameraParam.weightMatrixFile : filePath #filepath to weight matrix which is stored as an image
+PolCameraParam.stratRow: 240
+PolCameraParam.stratColumn: 250
+PolCameraParam.RowLen: 360
+PolCameraParam.ColumnLen: 240
+
+
+#Paramters of place recognition. Must be calibrated and set before using. 
+PlaceRecParam.scales:!!opencv-matrix
+        rows:1
+        cols:3
+        dt:d
+        data:[40,60,100]
+PlaceRecParam.mapfilepath:'/map'
+PlaceRecParam.mapresolution:0.1
+
+
+#Paramters of transformation matrix between camera and IMU. Must be calibrated and set before using. 
+IMU.mRotationImuToCameraxx: 0.00001977
+IMU.mRotationImuToCameraxy: -0.01152179
+IMU.mRotationImuToCameraxz: 0.99993362
+IMU.mRotationImuToCamerayx: -0.99983356
+IMU.mRotationImuToCamerayy: -0.01824314
+IMU.mRotationImuToCamerayz: -0.00019044
+IMU.mRotationImuToCamerazx: 0.01824412
+IMU.mRotationImuToCamerazy: -0.99976719
+IMU.mRotationImuToCamerazz: -0.01152023
+IMU.mvTranslationx: 0.0234729
+IMU.mvTranslationy: 0.03775352
+IMU.mvTranslationz: 0.12280516

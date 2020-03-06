@@ -1,0 +1,3 @@
+datastore: ../config/datastore.yaml
+alg1: ../config/alg1.yaml
+alg2: ../config/alg2.yaml

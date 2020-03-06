@@ -1,0 +1,68 @@
+1.GNU 【nju:】 革奴
+是一个自由的操作系统，内容软件完全以GPL方式发布，GNU's NOT Unix递归缩写
+包含三个协议条款
+GPL GNU 通用公共许可证 使用软件对所有的用户来说是自由的
+	通过下述途径实现这一目标
+	软件开源形式发布
+	使用了受GPL包含的任何软件的一部分家，该软件就继承了GPL软件
+	不限制自由软件进行商业性质的包装和发行
+LGPL GNU较宽松公共许可证（GNU Lesser General Public License）
+GFDL GNU自由文档许可证（GNU Free Documentation License）
+
+主条目：
+	GNU编译器套装（GCC），GNU的C库（glibc），GNU核心工具组（coreutils），GNU除错器（GDB），GNU二进制实用程序（binutils）GNOME桌面环境
+
+debian  迪便
+GNOME G-nome GNU Object Model Enviroment
+
+2.bash
+是一个为GNU计划编写的Unix shell，Bourne-Again Shell
+是大多数Linux系统以及Mac OSX默认的shell
+
+3.shell
+计算机科学中，shell俗称壳，区别于核，是指为使用者提供操作界面的软件（命令解释器），类似于Dos下的cmd.exe
+
+4.MinGW minimalist GNU for windows缩写，用于开发原生windows应用的开发环境
+提供了针对win32应用的GCC，GNU binutils等工具
+
+5.POSIX 可移植操作系统接口（Portable Operating System Interface of UNIX 
+POSIX标准定义了操作系统应该为应用程序提供的接口标准，是IEEE为要在各种UNIX操作系统上运行的软件而定义的一系列API标准的总称
+
+6.Cygwin 
+在windows平台上运行的类UNIX模拟系统，提供了一个UNIX模拟DLL以及在其上层构建的多种可以载Linux系统中找到的软件包。
+
+7.CUDA
+compute unified device architecture 
+是显卡厂商NVIDIA推出的运算平台。它包含了CUDA指令集架构（ISA）以及GPU内部的并行计算引擎。 
+
+8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

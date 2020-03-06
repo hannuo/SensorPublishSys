@@ -1,0 +1,8 @@
+name: datastore
+pubtosub: 
+    IMU: imu_datastore 
+    COMPASS: compass_datastore 
+    BAROMETRIC: barometric_datastore 
+    POLCAMERA: polcamera_datastore
+que_size: 1000
+inteval: 200
